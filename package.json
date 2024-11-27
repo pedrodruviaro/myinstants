@@ -1,5 +1,10 @@
 {
-  "name": "nuxt-app",
+  "name": "myinstants-clone-nuxt",
+  "author": {
+    "name": "pedroruviaro",
+    "email": "pedrodruviaro@gmail.com",
+    "url": "https://pedroruviaro.com.br/"
+  },
   "private": true,
   "type": "module",
   "scripts": {
