@@ -4,9 +4,9 @@ Clone do myinstants em Nuxt
 
 ### Todos
 
-- [] Fazer um web scrapping e transformar em API
-- [] Criar tela de listagem de áudios
-- [] Criar player de áudio
+- [ ] Fazer um web scrapping e transformar em API
+- [ ] Criar tela de listagem de áudios
+- [ ] Criar player de áudio
 
 ### Setup
 
