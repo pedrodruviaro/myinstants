@@ -2,7 +2,12 @@
 export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
-  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/google-fonts"],
+  modules: [
+    "@nuxtjs/tailwindcss",
+    "@nuxtjs/google-fonts",
+    "shadcn-nuxt",
+    "@nuxtjs/color-mode",
+  ],
   googleFonts: {
     base64: true,
     fontsDir: "assets/fonts",
@@ -15,5 +20,15 @@ export default defineNuxtConfig({
     routeRules: {
       "/api/**": { cors: true },
     },
+  },
+  shadcn: {
+    /**
+     * Prefix for all the imported component
+     */
+    prefix: "",
+    /**
+     * @default "./components/ui"
+     */
+    componentDir: "./components/ui",
   },
 })
