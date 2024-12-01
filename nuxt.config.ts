@@ -11,4 +11,9 @@ export default defineNuxtConfig({
       Inter: [400, 700],
     },
   },
+  nitro: {
+    routeRules: {
+      "/api/**": { cors: true },
+    },
+  },
 })
