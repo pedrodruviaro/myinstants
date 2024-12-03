@@ -1,9 +1,7 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+useSeoMeta({
+  title: "Todos os instants",
+})
+</script>
 
-<template>
-  <div>
-    <h1 class="font-bold">Hello Nuxt</h1>
-    <Button>Click me</Button>
-    <Button disabled>Click me</Button>
-  </div>
-</template>
+<template></template>

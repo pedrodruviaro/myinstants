@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="flex h-full">
+  <div class="flex min-h-full">
     <MenuNavigation />
 
     <MainContent>
