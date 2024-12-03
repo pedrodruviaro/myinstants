@@ -16,7 +16,7 @@ const links = [
 </script>
 
 <template>
-  <aside class="w-64 flex flex-col gap-4 bg-gray-900 min-h-full">
+  <aside class="w-64 flex flex-col gap-4 bg-gray-900 h-screen">
     <div class="p-5">
       <span
         class="text-gray-300 text-base lg:text-xl flex items-center font-bold"

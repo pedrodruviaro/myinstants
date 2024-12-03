@@ -2,10 +2,9 @@
 useSeoMeta({
   title: "Recentes",
 })
+const { data } = await useFetch("/api/instants/recents")
 </script>
 
 <template>
-  <div>
-    <h1>recents</h1>
-  </div>
+  <pre>{{ data }}</pre>
 </template>

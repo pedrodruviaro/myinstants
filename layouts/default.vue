@@ -1,9 +1,8 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="flex min-h-full">
+  <div class="grid grid-cols-[max-content_1fr] w-full h-screen">
     <MenuNavigation />
-
     <MainContent>
       <slot />
     </MainContent>
