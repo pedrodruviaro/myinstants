@@ -7,6 +7,7 @@ import {
   RECENTS_URL,
   SEARCH_URL,
 } from "~/server/config/url"
+import slugify from "slugify"
 
 export function NewController() {
   async function readAll() {
@@ -27,6 +28,7 @@ export function NewController() {
       const audioPath = audioUrlChunks[1]
 
       response.push({
+        id: slugify(title),
         title,
         audioUrl: BASE_URL + audioPath,
       })
@@ -55,6 +57,7 @@ export function NewController() {
       const audioPath = audioUrlChunks[1]
 
       response.push({
+        id: slugify(title),
         title,
         audioUrl: BASE_URL + audioPath,
       })
@@ -81,6 +84,7 @@ export function NewController() {
       const audioPath = audioUrlChunks[1]
 
       response.push({
+        id: slugify(title),
         title,
         audioUrl: BASE_URL + audioPath,
       })
@@ -107,6 +111,7 @@ export function NewController() {
       const audioPath = audioUrlChunks[1]
 
       response.push({
+        id: slugify(title),
         title,
         audioUrl: BASE_URL + audioPath,
       })
