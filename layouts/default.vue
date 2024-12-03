@@ -1,7 +1,11 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div>
-    <slot />
+  <div class="flex h-full">
+    <MenuNavigation />
+
+    <MainContent>
+      <slot />
+    </MainContent>
   </div>
 </template>
