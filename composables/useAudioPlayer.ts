@@ -5,12 +5,12 @@ export function useAudioPlayer() {
   const currentInstant = ref<Instant | null>(null)
   const audioRef = ref<HTMLAudioElement | null>(null)
 
-  const isAudioTitlePlaying = (title: string) => {
+  const isAudioPlaying = (id: string) => {
     if (!currentInstant.value) {
       return false
     }
 
-    return slugify(title) === slugify(currentInstant.value?.title)
+    return id === currentInstant.value.id
   }
 
   const play = (instant: Instant) => {
@@ -31,6 +31,6 @@ export function useAudioPlayer() {
   return {
     play,
     pause,
-    isAudioTitlePlaying,
+    isAudioPlaying,
   }
 }
