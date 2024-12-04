@@ -1,10 +1,10 @@
-import slugify from "slugify"
 import type { Instant } from "~/entities/Instant"
+const currentInstant = ref<Instant | null>(null)
+const audioRef = ref<HTMLAudioElement | null>(null)
+const progress = ref(0)
+const playing = ref(false)
 
 export function useAudioPlayer() {
-  const currentInstant = ref<Instant | null>(null)
-  const audioRef = ref<HTMLAudioElement | null>(null)
-
   const isAudioPlaying = (id: string) => {
     if (!currentInstant.value) {
       return false
@@ -18,19 +18,34 @@ export function useAudioPlayer() {
     pause()
 
     currentInstant.value = instant
+    playing.value = true
 
     audioRef.value = new Audio(instant.audioUrl)
     audioRef.value.play()
+    audioRef.value.onended = () => {
+      pause()
+    }
+
+    audioRef.value.ontimeupdate = () => {
+      if (!audioRef.value) return
+
+      progress.value =
+        (audioRef.value?.currentTime / audioRef.value?.duration) * 100
+    }
   }
 
   const pause = () => {
+    playing.value = false
     audioRef.value?.pause()
-    currentInstant.value = null
+    progress.value = 0
   }
 
   return {
     play,
     pause,
     isAudioPlaying,
+    currentInstant,
+    progress,
+    playing,
   }
 }

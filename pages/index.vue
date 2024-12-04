@@ -7,7 +7,7 @@ useSeoMeta({
 
 const { data } = await useFetch<Instant[]>("/api/instants")
 
-const { play, pause, isAudioPlaying } = useAudioPlayer()
+const { play, pause, isAudioPlaying, playing } = useAudioPlayer()
 
 const handlePlayAndPause = (instant: Instant) => {
   if (isAudioPlaying(instant.id)) {
@@ -27,7 +27,7 @@ const handlePlayAndPause = (instant: Instant) => {
       :id="instant.id"
       :title="instant.title"
       :audioUrl="instant.audioUrl"
-      :isPlaying="isAudioPlaying(instant.id)"
+      :isPlaying="playing && isAudioPlaying(instant.id)"
       @play="handlePlayAndPause"
     />
   </div>
