@@ -21,7 +21,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-vue-next": "^0.462.0",
-    "nuxt": "^3.14.1592",
+    "nuxt": "npm:nuxt-nightly@latest",
     "radix-vue": "^1.9.10",
     "shadcn-nuxt": "0.11.3",
     "slugify": "^1.6.6",

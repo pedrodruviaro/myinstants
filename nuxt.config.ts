@@ -1,6 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
   modules: [
     "@nuxtjs/tailwindcss",
@@ -17,6 +16,9 @@ export default defineNuxtConfig({
     },
   },
   nitro: {
+    experimental: {
+      openAPI: true,
+    },
     routeRules: {
       "/api/**": { cors: true },
     },
