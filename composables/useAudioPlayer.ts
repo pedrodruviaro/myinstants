@@ -3,6 +3,7 @@ const currentInstant = ref<Instant | null>(null)
 const audioRef = ref<HTMLAudioElement | null>(null)
 const progress = ref(0)
 const playing = ref(false)
+const duration = ref(0)
 
 export function useAudioPlayer() {
   const isAudioPlaying = (id: string) => {
@@ -29,6 +30,8 @@ export function useAudioPlayer() {
     audioRef.value.ontimeupdate = () => {
       if (!audioRef.value) return
 
+      duration.value = audioRef.value.duration
+
       progress.value =
         (audioRef.value?.currentTime / audioRef.value?.duration) * 100
     }
@@ -47,5 +50,6 @@ export function useAudioPlayer() {
     currentInstant,
     progress,
     playing,
+    duration,
   }
 }

@@ -14,7 +14,8 @@ const links = [
   },
 ]
 
-const { play, pause, playing, currentInstant, progress } = useAudioPlayer()
+const { play, pause, playing, currentInstant, progress, duration } =
+  useAudioPlayer()
 </script>
 
 <template>
@@ -46,6 +47,7 @@ const { play, pause, playing, currentInstant, progress } = useAudioPlayer()
         @pause="pause"
         :title="currentInstant.title"
         :isPlaying="playing"
+        :duration="duration"
         v-model="progress"
       />
     </div>

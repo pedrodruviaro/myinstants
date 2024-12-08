@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { Pause, Play } from "lucide-vue-next"
-import type { Instant } from "~/entities/Instant"
+import { Drum, Pause, Play } from "lucide-vue-next"
 
 const props = defineProps<{
   isPlaying: boolean
   title: string
+  duration: number
 }>()
 
 const emits = defineEmits<{
@@ -22,6 +22,8 @@ const handleToggle = () => {
 }
 
 const progress = defineModel<number>({ required: true })
+
+const durationInMinutes = computed(() => Math.floor(props.duration / 60))
 </script>
 
 <template>
@@ -44,12 +46,16 @@ const progress = defineModel<number>({ required: true })
         </Button>
       </div>
 
-      <Slider
-        :model-value="[progress]"
-        :default-value="[0]"
-        :max="100"
-        :step="1"
-      />
+      <div class="w-full gap-2 flex justify-center items-center">
+        <span class="text-xs">00:00</span>
+        <Slider
+          :model-value="[progress]"
+          :default-value="[0]"
+          :max="100"
+          :step="1"
+        />
+        <span class="text-xs">{{ props.duration }}</span>
+      </div>
     </div>
   </div>
 </template>
